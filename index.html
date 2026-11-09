@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Configuración de codificación de caracteres para admitir tildes y eñes -->
+    <meta charset="UTF-8">
+    <!-- Configuración del visor (viewport) para asegurar diseño adaptable (responsive) en móviles y tablets -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título de la pestaña del navegador -->
+    <title>Carnicería Paco. Carne fresca y de calidad</title>
+
+    <!-- Resumen descriptivo para motores de búsqueda (SEO) -->
+    <meta name="description" content="Carnicería Paco: carne fresca, productos tradicionales y atención cercana. Descubre nuestro catálogo y contacta con nosotros.">
+
+    <!-- Enlace al archivo de estilos CSS externo donde se define todo el diseño visual -->
+    <link rel="stylesheet" href="CSS/estilos.css">
+</head>
+
+<body>
+
+    <!-- =========================================
+         CABECERA Y MENÚ DE NAVEGACIÓN
+         ========================================= -->
+    <!-- Cabecera fija en la parte superior mediante position: sticky definido en el CSS -->
+    <header class="cabecera">
+        <!-- Contenedor del logotipo y nombre del negocio -->
+        <div class="logo">
+            <!-- Enlace que recarga la página o lleva al inicio al hacer clic en el logo -->
+            <a href="#inicio">
+                <img src="img/logo.jpg" alt="Logo de Carnicería Paco">
+            </a>
+
+            <div>
+                <h2>Carnicería Paco</h2>
+                <p>Calidad y sabor de confianza</p>
+            </div>
+        </div>
+
+        <!-- Interruptor lógico (checkbox oculto en CSS) que controla el estado abierto/cerrado del menú móvil sin JavaScript -->
+        <input type="checkbox" id="menu-toggle">
+
+        <!-- Botón visible de menú hamburguesa vinculado al checkbox mediante el atributo 'for' -->
+        <!-- aria-label: Etiqueta de accesibilidad (WAI-ARIA) para lectores de pantalla -->
+        <label for="menu-toggle" class="hamburguesa" aria-label="Abrir o cerrar el menú">
+            <!-- Los tres spans dibujan las líneas horizontales del icono que luego se animan en cruz con CSS -->
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+
+        <!-- Barra de navegación con los enlaces internos a las secciones de la página -->
+        <nav class="navegacion">
+            <a href="#inicio">Inicio</a>
+            <a href="#presentacion">Presentación</a>
+            <a href="#servicios">Productos</a>
+            <a href="#galeria">Galería</a>
+            <a href="#contacto">Contacto</a>
+            <a href="#empresa">Nuestra empresa</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- =========================================
+             1. SECCIÓN DE PORTADA (HERO)
+             ========================================= -->
+        <!-- id="inicio": Ancla de navegación; class="portada": Estilo con imagen de fondo y degradado en CSS -->
+        <section id="inicio" class="portada">
+            <!-- Contenedor centrado del contenido principal de bienvenida -->
+            <div class="portada-contenido">
+                <p class="etiqueta">Tradición, frescura y calidad</p>
+
+                <!-- Encabezado principal de la página (H1) -->
+                <h1>Bienvenidos a Carnicería Paco</h1>
+
+                <p class="portada-texto">
+                    La buena carne se reconoce a simple vista y se disfruta
+                    en cada bocado. Descubre nuestros productos y prepara
+                    platos para chuparse los dedos.
+                </p>
+
+                <!-- Grupo de botones de llamada a la acción (CTA) -->
+                <div class="botones">
+                    <a href="#servicios" class="boton boton-principal">
+                        Ver productos
+                    </a>
+
+                    <a href="#contacto" class="boton boton-secundario">
+                        Contactar
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- =========================================
+             2. SECCIÓN DE PRESENTACIÓN
+             ========================================= -->
+        <!-- Utiliza un diseño de dos columnas mediante grid (.presentacion-grid) en el CSS -->
+        <section id="presentacion" class="seccion presentacion">
+            <div class="contenedor presentacion-grid">
+                <!-- Columna de la imagen institucional -->
+                <div class="presentacion-imagen">
+                    <img src="img/paco.jpg" alt="Carnicería Paco">
+                </div>
+
+                <!-- Columna de texto descriptivo -->
+                <div class="presentacion">
+                    <p class="etiqueta">Nuestra especialidad</p>
+                    <h2>Carne de calidad para tu mesa</h2>
+
+                    <p>
+                        En Carnicería Paco queremos que disfrutes de productos
+                        sabrosos y de una atención cercana. Nuestro objetivo
+                        es ayudarte a encontrar la carne ideal para cada comida.
+                    </p>
+
+                    <p>
+                        Desde filetes para el día a día hasta cortes especiales
+                        para celebraciones, tenemos opciones para diferentes
+                        recetas y gustos.
+                    </p>
+
+                    <a href="#servicios" class="boton boton-principal">
+                        Descubre el catálogo
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- =========================================
+             3. CATÁLOGO DE PRODUCTOS Y PRECIOS
+             ========================================= -->
+        <section id="servicios" class="seccion catalogo">
+            <div class="contenedor">
+                <p class="etiqueta texto-centro">Nuestro catálogo</p>
+
+                <h2 class="titulo-seccion">Nuestros productos</h2>
+
+                <p class="intro">
+                    Carne para cada ocasión: para la plancha, el horno,
+                    los guisos, las barbacoas y las comidas en familia.
+                </p>
+
+                <!-- Contenedor de cuadrícula (.productos) para organizar las tarjetas de artículos -->
+                <div class="productos">
+
+                    <!-- Tarjeta individual de producto (.producto) con efectos hover definidos en CSS -->
+                    <article class="producto">
+                        <img src="img/ternera.jpg" alt="Carne de ternera">
+                        <h3>Ternera</h3>
+                        <p>Tierna y jugosa, ideal para filetes y guisos.</p>
+                        <!-- Etiqueta de precio destacada con fondo corporativo rojo -->
+                        <p class="precio">10,95 €/kg</p>
+                    </article>
+
+                    <article class="producto">
+                        <img src="img/jamon.jpg" alt="Jamón de cerdo">
+                        <h3>Jamón de cerdo</h3>
+                        <p>Perfecto para cocinar, asar o preparar a la plancha.</p>
+                        <p class="precio">9,95 €/kg</p>
+                    </article>
+
+                    <article class="producto">
+                        <img src="img/chorizo.jpg" alt="Chorizo">
+                        <h3>Chorizo</h3>
+                        <p>Ideal para barbacoas, guisos y platos tradicionales.</p>
+                        <p class="precio">10,50 €/kg</p>
+                    </article>
+
+                    <article class="producto">
+                        <img src="img/cordero.jpg" alt="Carne de cordero">
+                        <h3>Cordero</h3>
+                        <p>Una opción sabrosa para asados y celebraciones.</p>
+                        <p class="precio">12,95 €/kg</p>
+                    </article>
+
+                    <article class="producto">
+                        <img src="img/vacio.jpg" alt="Vacío de ternera">
+                        <h3>Vacío de ternera</h3>
+                        <p>Un corte perfecto para la parrilla y la barbacoa.</p>
+                        <p class="precio">9,95 €/kg</p>
+                    </article>
+
+                    <article class="producto">
+                        <img src="img/pollo.jpg" alt="Pollo fresco">
+                        <h3>Pollo</h3>
+                        <p>Versátil y sabroso para todo tipo de recetas.</p>
+                        <p class="precio">4,95 €/kg</p>
+                    </article>
+
+                    <article class="producto">
+                        <img src="img/pechuga-pollo.jpg" alt="Pechuga de pollo">
+                        <h3>Pechuga de pollo</h3>
+                        <p>Ideal para la plancha, ensaladas y comidas ligeras.</p>
+                        <p class="precio">9,95 €/kg</p>
+                    </article>
+
+                    <article class="producto">
+                        <img src="img/cerdo.jpg" alt="Carne de cerdo">
+                        <h3>Carne de cerdo</h3>
+                        <p>Perfecta para guisos, filetes y recetas caseras.</p>
+                        <p class="precio">8,95 €/kg</p>
+                    </article>
+
+                    <article class="producto">
+                        <img src="img/lomo-cerdo.jpg" alt="Lomo de cerdo">
+                        <h3>Lomo de cerdo</h3>
+                        <p>Tierno y delicioso para preparar a la plancha.</p>
+                        <p class="precio">9,50 €/kg</p>
+                    </article>
+
+                    <article class="producto">
+                        <img src="img/costillas.jpg" alt="Costillas de cerdo">
+                        <h3>Costillas</h3>
+                        <p>Ideales para el horno, la barbacoa o los guisos.</p>
+                        <p class="precio">8,50 €/kg</p>
+                    </article>
+
+                    <article class="producto">
+                        <img src="img/carne-picada.jpg" alt="Carne picada">
+                        <h3>Carne picada</h3>
+                        <p>Perfecta para albóndigas, hamburguesas y lasaña.</p>
+                        <p class="precio">11,95 €/kg</p>
+                    </article>
+
+                    <article class="producto">
+                        <img src="img/hamburguesas.jpg" alt="Hamburguesas de carne">
+                        <h3>Hamburguesas</h3>
+                        <p>Una solución práctica para una cena deliciosa.</p>
+                        <p class="precio">12,50 €/kg</p>
+                    </article>
+
+                    <article class="producto">
+                        <img src="img/salchichas.jpg" alt="Salchichas frescas">
+                        <h3>Salchichas frescas</h3>
+                        <p>Sabrosas y fáciles de preparar a la plancha.</p>
+                        <p class="precio">9,95 €/kg</p>
+                    </article>
+
+                    <article class="producto">
+                        <img src="img/panceta.jpg" alt="Panceta de cerdo">
+                        <h3>Panceta</h3>
+                        <p>Perfecta para barbacoas y recetas tradicionales.</p>
+                        <p class="precio">7,95 €/kg</p>
+                    </article>
+
+                    <article class="producto">
+                        <img src="img/albondigas.jpg" alt="Albóndigas de carne">
+                        <h3>Albóndigas</h3>
+                        <p>Para cocinar en salsa o acompañar con arroz.</p>
+                        <p class="precio">6,50 €/kg</p>
+                    </article>
+
+                    <article class="producto">
+                        <img src="img/pavo.jpg" alt="Carne de pavo">
+                        <h3>Pavo</h3>
+                        <p>Una alternativa versátil para comidas y cenas.</p>
+                        <p class="precio">10,95 €/kg</p>
+                    </article>
+
+                    <article class="producto">
+                        <img src="img/higado.jpg" alt="Hígado de ternera">
+                        <h3>Hígado de ternera</h3>
+                        <p>Un producto tradicional para preparar a la plancha.</p>
+                        <p class="precio">8,95 €/kg</p>
+                    </article>
+
+                    <article class="producto">
+                        <img src="img/morcilla.jpg" alt="Morcilla">
+                        <h3>Morcilla</h3>
+                        <p>Ideal para parrilladas, guisos y platos de cuchara.</p>
+                        <p class="precio">8,50 €/kg</p>
+                    </article>
+
+                    <article class="producto">
+                        <img src="img/chuletas.jpg" alt="Chuletas de cerdo">
+                        <h3>Chuletas de cerdo</h3>
+                        <p>Jugosas y perfectas para la sartén o la parrilla.</p>
+                        <p class="precio">9,95 €/kg</p>
+                    </article>
+
+                    <article class="producto">
+                        <img src="img/entrecot.jpg" alt="Entrecot de ternera">
+                        <h3>Entrecot de ternera</h3>
+                        <p>Un corte especial para los amantes de la buena carne.</p>
+                        <p class="precio">22,95 €/kg</p>
+                    </article>
+
+                    <article class="producto">
+                        <img src="img/muslos-pollo.jpg" alt="Muslos de pollo">
+                        <h3>Muslos de pollo</h3>
+                        <p>Perfectos para preparar al horno con patatas.</p>
+                        <p class="precio">5,50 €/kg</p>
+                    </article>
+
+                    <article class="producto">
+                        <img src="img/alitas-pollo.jpg" alt="Alitas de pollo">
+                        <h3>Alitas de pollo</h3>
+                        <p>Ideales para hornear, freír o preparar a la barbacoa.</p>
+                        <p class="precio">4,95 €/kg</p>
+                    </article>
+
+                    <article class="producto">
+                        <img src="img/pinchos.jpg" alt="Pinchos de carne adobados">
+                        <h3>Pinchos adobados</h3>
+                        <p>Listos para cocinar y disfrutar de todo su sabor.</p>
+                        <p class="precio">12,95 €/kg</p>
+                    </article>
+
+                    <article class="producto">
+                        <img src="img/huesos-caldo.jpg" alt="Huesos para caldo">
+                        <h3>Huesos para caldo</h3>
+                        <p>El toque tradicional para caldos y sopas caseras.</p>
+                        <p class="precio">3,50 €/kg</p>
+                    </article>
+
+                </div>
+
+                <!-- Enlace a la página independiente del catálogo (servicios.html) -->
+                <p class="texto-centro">
+                    <a href="servicios.html" class="boton boton-principal">Ver página de productos</a>
+                </p>
+            </div>
+        </section>
+
+
+        <!-- =========================================
+             4. GALERÍA VISUAL
+             ========================================= -->
+        <!-- Muestra imágenes organizadas en cuadrícula con desbordamiento -->
+        <section id="galeria" class="seccion seccion-galeria">
+            <div class="contenedor">
+                <p class="etiqueta texto-centro">Una mirada a nuestro trabajo</p>
+                <h2 class="titulo-seccion">Nuestra galería</h2>
+
+                <p class="intro">
+                    Descubre nuestra carnicería y algunos de nuestros productos.
+                </p>
+
+                <div class="galeria">
+                    <div>
+                        <img src="img/paco.jpg" alt="Interior de Carnicería Paco">
+                    </div>
+                    <div>
+                        <img src="img/paco2.jpg" alt="Productos de Carnicería Paco">
+                    </div>
+                    <div>
+                        <img src="img/ternera.jpg" alt="Carne de ternera">
+                    </div>
+                    <div>
+                        <img src="img/cordero.jpg" alt="Carne de cordero">
+                    </div>
+                    <div>
+                        <img src="img/chorizo.jpg" alt="Chorizo">
+                    </div>
+                    <div>
+                        <img src="img/pollo.jpg" alt="Pollo fresco">
+                    </div>
+                </div>
+
+                <!-- Enlace a la página independiente de la galería (galeria.html) -->
+                <p class="texto-centro">
+                    <a href="galeria.html" class="boton boton-principal">Ver página de galería</a>
+                </p>
+            </div>
+        </section>
+
+
+        <!-- =========================================
+             5. CONTACTO Y UBICACIÓN
+             ========================================= -->
+        <!-- Estructura dividida en dos bloques: información de contacto y formulario de mensajes -->
+        <section id="contacto" class="seccion seccion-contacto">
+            <div class="contenedor">
+                <p class="etiqueta texto-centro">Estamos para ayudarte</p>
+                <h2 class="titulo-seccion">Contacto y ubicación</h2>
+
+                <p class="intro">
+                    ¿Buscas un producto concreto o quieres consultar nuestros
+                    precios? Escríbenos o ven a visitarnos.
+                </p>
+
+                <div class="contacto">
+                    <!-- Bloque de datos físicos y enlace externo a Google Maps -->
+                    <div class="contacto-informacion">
+                        <h3>Información de contacto</h3>
+
+                        <p><strong>Nombre:</strong> Carnicería Paco</p>
+                        <p><strong>Dirección:</strong> Calle Bureba, 28, Leganés, Madrid</p>
+                        <p><strong>Teléfono:</strong> 916 000 820</p>
+                        <p><strong>Correo:</strong> carniceriapaco@gmail.com</p>
+                        <p><strong>Horario:</strong> Lunes - Sábado: 9:00H - 16:00H</p>
+
+                        <h3>Cómo llegar</h3>
+
+                        <!-- Mapa de Google Maps -->
+                        <iframe class="mapa"
+                                title="Mapa de Carnicería Paco en Calle Bureba 28, Leganés"
+                                src="https://www.google.com/maps?q=Calle+Bureba+28,+Legan%C3%A9s,+Madrid&amp;output=embed"
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"
+                                allowfullscreen></iframe>
+
+                        <a class="boton boton-principal"
+                           href="https://www.google.com/maps/search/?api=1&amp;query=Calle+Bureba+28,+Legan%C3%A9s,+Madrid"
+                           target="_blank"
+                           rel="noopener">
+                            Abrir Google Maps
+                        </a>
+                    </div>
+
+                    <!-- Bloque del formulario de contacto interactivo -->
+                    <div class="contacto-formulario">
+                        <h3>Envíanos un mensaje</h3>
+
+                        <form action="#" method="post">
+                            <label for="nombre">Nombre</label>
+                            <input type="text"
+                                   id="nombre"
+                                   name="nombre"
+                                   placeholder="Escribe tu nombre"
+                                   required>
+
+                            <label for="correo">Correo electrónico</label>
+                            <input type="email"
+                                   id="correo"
+                                   name="correo"
+                                   placeholder="tu@correo.com"
+                                   required>
+
+                            <label for="asunto">Asunto</label>
+                            <input type="text"
+                                   id="asunto"
+                                   name="asunto"
+                                   placeholder="¿En qué podemos ayudarte?">
+
+                            <label for="mensaje">Mensaje</label>
+                            <textarea id="mensaje"
+                                      name="mensaje"
+                                      rows="6"
+                                      placeholder="Escribe tu mensaje"
+                                      required></textarea>
+
+                            <button type="submit" class="boton boton-principal">
+                                Enviar mensaje
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <p class="texto-centro">
+                    <a href="contacto.html" class="boton boton-principal">Ver página de contacto</a>
+                </p>
+            </div>
+        </section>
+
+
+        <!-- =========================================
+             6. NUESTRA EMPRESA (QUIÉNES SOMOS)
+             ========================================= -->
+        <!-- Sección con diseño de fondo oscuro y texto claro en contraste -->
+        <section id="empresa" class="seccion empresa">
+            <div class="contenedor empresa-grid">
+                <div>
+                    <p class="etiqueta">Quiénes somos</p>
+                    <h2>Tradición y compromiso</h2>
+
+                    <p>
+                        Carnicería Paco nace con la idea de ofrecer una
+                        atención cercana y productos para quienes disfrutan
+                        de cocinar con buenos ingredientes.
+                    </p>
+
+                    <p>
+                        Queremos que cada cliente encuentre lo que necesita
+                        y reciba un trato amable, tanto si viene a comprar
+                        para el día a día como si prepara una ocasión especial.
+                    </p>
+                </div>
+
+                <div class="compromisos">
+                    <h3>Nuestros compromisos</h3>
+
+                    <ul>
+                        <li>Atención cercana y personalizada.</li>
+                        <li>Variedad de productos cárnicos.</li>
+                        <li>Orientación para elegir cada corte.</li>
+                        <li>Servicio pensado para nuestros clientes.</li>
+                    </ul>
+
+                    <p class="final">
+                        En Carnicería Paco, ¡la buena comida empieza aquí!
+                    </p>
+
+                    <!-- Enlace a la página independiente de la empresa -->
+                    <a href="empresa.html" class="boton boton-secundario">Ver página de la empresa</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- =========================================
+         PIE DE PÁGINA (FOOTER)
+         ========================================= -->
+    <footer class="pie">
+        <div class="contenedor">
+            <h2>Carnicería Paco</h2>
+            <p>Calidad, tradición y sabor para tu mesa.</p>
+            <!-- Enlaces a todas las páginas del sitio -->
+            <p>
+                <a href="servicios.html" style="color: inherit;">Productos</a> |
+                <a href="galeria.html" style="color: inherit;">Galería</a> |
+                <a href="contacto.html" style="color: inherit;">Contacto</a> |
+                <a href="empresa.html" style="color: inherit;">Nuestra empresa</a> |
+                <a href="analisis.html" style="color: inherit;">Análisis</a>
+            </p>
+            <p>2026 Carnicería Paco. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

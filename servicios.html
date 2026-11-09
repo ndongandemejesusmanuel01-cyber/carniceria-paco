@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carnicería Paco. Productos y precios</title>
+    <meta name="description" content="Catálogo completo de carnes frescas y embutidos de Carnicería Paco, con precios.">
+    <link rel="stylesheet" href="CSS/estilos.css">
+</head>
+<body>
+    <!-- Cabecera reutilizada con indicador de página actual -->
+    <header class="cabecera">
+        <div class="logo">
+            <a href="index.html"><img src="img/logo.jpg" alt="Logo de Carnicería Paco"></a>
+            <div>
+                <h2>Carnicería Paco</h2>
+                <p>Calidad y sabor de confianza</p>
+            </div>
+        </div>
+        
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="hamburguesa" aria-label="Abrir o cerrar el menú">
+            <span></span><span></span><span></span>
+        </label>
+        
+        <nav class="navegacion">
+            <a href="index.html">Inicio</a>
+            <a href="index.html#presentacion">Presentación</a>
+            <a href="servicios.html" aria-current="page">Productos</a>
+            <a href="galeria.html">Galería</a>
+            <a href="contacto.html">Contacto</a>
+            <a href="empresa.html">Nuestra empresa</a>
+        </nav>
+    </header>
+
+    <!-- Catálogo de productos y sección de servicios -->
+    <main>
+        <section class="seccion">
+            <div class="contenedor">
+                <p class="etiqueta texto-centro">Nuestro catálogo</p>
+                <h2 class="titulo-seccion">Nuestros productos</h2>
+                <p class="intro">Carne para cada ocasión: para la plancha, el horno, los guisos, las barbacoas y las comidas en familia.</p>
+                
+                <!-- Cuadrícula de artículos (productos) -->
+                <div class="productos">
+                    <article class="producto">
+                        <img src="img/ternera.jpg" alt="Carne de ternera" loading="lazy">
+                        <h3>Ternera</h3>
+                        <p>Tierna y jugosa, ideal para filetes y guisos.</p>
+                        <p class="precio">10,95 €/kg</p>
+                    </article>
+                    <!-- (El resto de artículos de productos mantienen esta misma estructura) -->
+                </div>
+            </div>
+        </section>
+
+        <section class="seccion fondo-gris">
+            <div class="contenedor texto-centro">
+                <h2 class="titulo-seccion">Servicios</h2>
+                <p class="intro"><strong>Envasado al vacío gratuito:</strong> preparamos tus pedidos listos para conservar o congelar.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pie de página con enlace al análisis -->
+    <footer class="pie">
+        <div class="contenedor">
+            <h2>Carnicería Paco</h2>
+            <p>Calidad, tradición y sabor para tu mesa.</p>
+            <p>&copy; 2026 Carnicería Paco. Todos los derechos reservados. · <a href="analisis.html">Análisis del rediseño</a></p>
+        </div>
+    </footer>
+</body>
+</html>
