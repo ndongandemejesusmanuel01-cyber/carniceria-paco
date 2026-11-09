@@ -1,0 +1,633 @@
+/* =========================================================
+   ESTILOS DE CARNICERÍA PACO
+   ========================================================= */
+
+
+/* =========================================================
+   1. BASE (reglas generales de toda la web)
+   ========================================================= */
+
+/* Hace que el padding y el borde cuenten dentro del ancho de cada elemento */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Desplazamiento suave al pulsar enlaces internos (#seccion).
+   scroll-padding-top deja hueco para que la cabecera fija no tape el título */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #333333;
+    background: #ffffff;
+    line-height: 1.6;
+}
+
+/* Las imágenes nunca se salen de su contenedor */
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: #8B0000;
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.25;
+    margin: 0 0 0.6em;
+    color: #1A1A1A;
+}
+
+p {
+    margin: 0 0 1em;
+}
+
+/* Contenedor centrado que limita el ancho del contenido */
+.contenedor {
+    width: 92%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.texto-estrecho {
+    max-width: 950px;
+}
+
+.texto-centro {
+    text-align: center;
+}
+
+/* Cada sección tiene espacio por arriba y por abajo */
+.seccion {
+    padding: 70px 0;
+}
+
+.fondo-gris {
+    background: #F5F5F5;
+}
+
+/* Texto pequeño en mayúsculas que aparece encima de los títulos */
+.etiqueta {
+    color: #C0392B;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+/* El tamaño del título se adapta a la pantalla (mínimo 28px, máximo 40px) */
+.titulo-seccion {
+    text-align: center;
+    font-size: clamp(28px, 3vw, 40px);
+}
+
+/* Párrafo de introducción centrado debajo del título */
+.intro {
+    max-width: 760px;
+    margin: 0 auto 35px;
+    text-align: center;
+    color: #555555;
+}
+
+/* Contorno visible al navegar con el teclado (accesibilidad) */
+:focus-visible {
+    outline: 3px solid #E74C3C;
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   2. BOTONES
+   ========================================================= */
+
+.boton {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 7px;
+    font-weight: bold;
+    font-size: 15px;
+    border: 2px solid #8B0000;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background 0.3s, transform 0.3s;
+}
+
+/* Botón rojo relleno */
+.boton-principal {
+    background: #8B0000;
+    color: #ffffff;
+}
+
+.boton-principal:hover {
+    background: #C0392B;
+    border-color: #C0392B;
+    transform: translateY(-2px);
+}
+
+/* Botón transparente con borde blanco (para fondos oscuros) */
+.boton-secundario {
+    background: transparent;
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+.boton-secundario:hover {
+    background: #ffffff;
+    color: #8B0000;
+}
+
+
+/* =========================================================
+   3. CABECERA Y MENÚ
+   ========================================================= */
+
+/* Cabecera que se queda pegada arriba al hacer scroll */
+.cabecera {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 10px 4%;
+    background: #1A1A1A;
+    border-bottom: 3px solid #8B0000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo img {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.logo h2 {
+    margin: 0;
+    font-size: 20px;
+    color: #ffffff;
+}
+
+.logo p {
+    margin: 0;
+    font-size: 12px;
+    color: #cccccc;
+}
+
+/* El checkbox sirve solo de interruptor y no se ve */
+#menu-toggle {
+    display: none;
+}
+
+/* Botón hamburguesa: oculto en ordenador, visible en móvil */
+.hamburguesa {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    padding: 8px;
+    cursor: pointer;
+}
+
+/* Las tres rayitas del icono */
+.hamburguesa span {
+    width: 26px;
+    height: 3px;
+    background: #ffffff;
+    border-radius: 2px;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.navegacion {
+    display: flex;
+    gap: 6px;
+}
+
+.navegacion a {
+    padding: 10px 14px;
+    border-radius: 6px;
+    color: #ffffff;
+    font-size: 15px;
+    transition: background 0.3s;
+}
+
+.navegacion a:hover,
+.navegacion a[aria-current="page"] {
+    background: #8B0000;
+}
+
+/* Menú en pantallas pequeñas */
+@media (max-width: 900px) {
+
+    .hamburguesa {
+        display: flex;
+    }
+
+    /* El menú empieza oculto y en columna */
+    .navegacion {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        gap: 2px;
+        padding-bottom: 8px;
+    }
+
+    /* Al marcar el checkbox (pulsando la hamburguesa) se muestra el menú */
+    #menu-toggle:checked ~ .navegacion {
+        display: flex;
+    }
+
+    /* Las rayitas se transforman en una X */
+    #menu-toggle:checked ~ .hamburguesa span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    #menu-toggle:checked ~ .hamburguesa span:nth-child(2) {
+        opacity: 0;
+    }
+
+    #menu-toggle:checked ~ .hamburguesa span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+
+/* =========================================================
+   4. PORTADA
+   ========================================================= */
+
+/* Imagen de fondo con una capa negra semitransparente encima */
+.portada {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+    padding: 80px 5%;
+    text-align: center;
+    color: #ffffff;
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+        url("../img/paco.jpg") center / cover #1A1A1A;
+}
+
+.portada-contenido {
+    max-width: 800px;
+}
+
+.portada h1 {
+    color: #ffffff;
+    font-size: clamp(34px, 5vw, 56px);
+}
+
+.portada .etiqueta {
+    color: #FF8A80;
+}
+
+.portada-texto {
+    font-size: 18px;
+    color: #eeeeee;
+}
+
+.botones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+
+/* =========================================================
+   5. PRESENTACIÓN (imagen + texto en dos columnas)
+   ========================================================= */
+
+.presentacion-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 45px;
+    align-items: center;
+}
+
+.presentacion-imagen img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================================================
+   6. PRODUCTOS (tarjetas en cuadrícula)
+   ========================================================= */
+
+/* Tantas columnas como quepan, cada una de 240px como mínimo */
+.productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 24px;
+    margin-bottom: 30px;
+}
+
+.producto {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 20px;
+    background: #ffffff;
+    border: 1px solid #eeeeee;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* La tarjeta se eleva un poco al pasar el ratón */
+.producto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+.producto img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+.producto h3 {
+    margin: 16px 18px 6px;
+    font-size: 19px;
+}
+
+.producto p {
+    margin: 0 18px 10px;
+    color: #555555;
+    font-size: 15px;
+}
+
+/* Etiqueta roja del precio, siempre al final de la tarjeta */
+.precio {
+    align-self: flex-start;
+    margin: auto 18px 0 !important;
+    padding: 5px 14px;
+    border-radius: 20px;
+    background: #8B0000;
+    color: #ffffff !important;
+    font-weight: bold;
+}
+
+
+/* Variante de 3 columnas fijas: 6 tarjetas = 2 filas de 3 */
+.productos.tres-columnas {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* Tablet: 2 tarjetas por fila */
+@media (max-width: 900px) {
+    .productos.tres-columnas {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Móvil: 1 tarjeta por fila */
+@media (max-width: 600px) {
+    .productos.tres-columnas {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================================================
+   7. GALERÍA (3 fotos por fila; con 6 fotos salen 2 filas)
+   ========================================================= */
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+/* Cada foto va dentro de un div que recorta lo que sobresale al hacer zoom */
+.galeria > div {
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.galeria img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    transition: transform 0.4s;
+}
+
+.galeria > div:hover img {
+    transform: scale(1.08);
+}
+
+/* Tablet: 2 fotos por fila */
+@media (max-width: 800px) {
+    .galeria {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Móvil pequeño: 1 foto por fila */
+@media (max-width: 480px) {
+    .galeria {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================================================
+   8. CONTACTO Y FORMULARIO
+   ========================================================= */
+
+/* Dos columnas: información a un lado y formulario al otro */
+.contacto {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+}
+
+.contacto-informacion,
+.contacto-formulario {
+    padding: 28px;
+    background: #F5F5F5;
+    border-radius: 12px;
+}
+
+.mapa {
+    width: 100%;
+    height: 260px;
+    margin-bottom: 18px;
+    border: 0;
+    border-radius: 8px;
+}
+
+label {
+    display: block;
+    margin: 14px 0 6px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #cccccc;
+    border-radius: 7px;
+    font: inherit;
+    background: #ffffff;
+}
+
+/* Al escribir en un campo, el borde se pone rojo */
+input:focus,
+textarea:focus {
+    border-color: #8B0000;
+    outline: 2px solid rgba(139, 0, 0, 0.2);
+}
+
+textarea {
+    resize: vertical;
+}
+
+form .boton {
+    margin-top: 18px;
+}
+
+
+/* =========================================================
+   9. NUESTRA EMPRESA (fondo oscuro)
+   ========================================================= */
+
+.empresa {
+    background: #1A1A1A;
+    color: #eeeeee;
+}
+
+.empresa h2,
+.empresa h3 {
+    color: #ffffff;
+}
+
+.empresa-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 45px;
+    align-items: center;
+}
+
+.compromisos {
+    padding: 28px;
+    background: #111111;
+    border-left: 4px solid #8B0000;
+    border-radius: 10px;
+}
+
+.compromisos ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 18px;
+}
+
+.compromisos li {
+    padding-left: 28px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+/* Marca ✓ delante de cada compromiso */
+.compromisos li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #E74C3C;
+    font-weight: bold;
+}
+
+.final {
+    font-weight: bold;
+    color: #FF8A80;
+    font-style: italic;
+}
+
+
+/* =========================================================
+   10. PIE DE PÁGINA
+   ========================================================= */
+
+/* Pie compacto: poco relleno, letra más pequeña y menos espacio entre líneas */
+.pie {
+    padding: 18px 0;
+    background: #111111;
+    color: #cccccc;
+    text-align: center;
+    font-size: 14px;
+    border-top: 3px solid #8B0000;
+}
+
+.pie h2 {
+    margin: 0 0 4px;
+    color: #ffffff;
+    font-size: 18px;
+}
+
+.pie p {
+    margin: 0 0 4px;
+}
+
+.pie p:last-child {
+    margin-bottom: 0;
+}
+
+.pie a {
+    color: #FF8A80;
+}
+
+
+/* =========================================================
+   11. RESPONSIVE GENERAL
+   ========================================================= */
+
+/* En pantallas estrechas, las dos columnas pasan a una sola */
+@media (max-width: 800px) {
+
+    .presentacion-grid,
+    .contacto,
+    .empresa-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .seccion {
+        padding: 50px 0;
+    }
+}
+
+/* Si el usuario pide menos animaciones, se desactivan */
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    * {
+        transition-duration: 0.01ms !important;
+    }
+}
